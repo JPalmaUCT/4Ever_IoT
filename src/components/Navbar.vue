@@ -1,5 +1,5 @@
 <template>
-    <v-app-bar app color="primary" dark elevate-on-scroll>
+    <v-app-bar app color="transparent" absolute flat>
         <v-btn text to="/">
             <div class="d-flex align-center">
                 <v-img
@@ -9,11 +9,12 @@
                 src="@/assets/imagenes/logo.png"
                 transition="scale-transition"
                 width="50"
+                style="filter: invert(100%);"
                 />
                 <h3 class="display-.5 font-weight-bold hidden-sm-and-down">
-                
+                  4Ever IoT
                 </h3>
-                <h4 class="display-.3 hidden-md-and-up">4Ever IoT</h4>
+                <div style="color:black"><h4 class="display-.3 hidden-md-and-up black--text"  >4Ever IoT</h4></div>
             </div>
         </v-btn>
         <v-spacer class="hidden-sm-and-down"></v-spacer>
@@ -29,10 +30,11 @@
         <v-menu offset-y>
         <template v-slot:activator="{ on, attrs }">     
               <v-btn
-                color="primary"
+                color="transparent"
                 depressed
                 v-bind="attrs"
                 v-on="on"
+                class="hidden-sm-and-down"
               >
               <v-icon>mdi-information-outline </v-icon> 
                 Acerca de
@@ -43,6 +45,7 @@
                 v-for="(item, index) in acerca_de"
                 :key="index"
                 :to="item.url"
+                
               >
                   <v-list-item-icon>
                     <v-icon>{{ item.icon }}</v-icon>
@@ -52,6 +55,7 @@
             </v-list>
           </v-menu>
         </div>
+
         <v-btn to="/login" text class="hidden-sm-and-down">
             <span class="mr-2">Log in</span>
         <v-icon>mdi-login</v-icon>

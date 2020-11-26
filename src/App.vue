@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Navbar/>
-    <v-main>
+    <v-main id="main_1">
       <router-view/>
     </v-main>
     <Footer/>
@@ -26,3 +26,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+#main_1{
+  background:#f0f0f0;
+}
+</style>
